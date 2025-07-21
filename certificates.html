@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Srinidhi Burugulapally Portfolio</title>
+    <link rel="stylesheet" href="certificates.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Srinidhi Burugulapally</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="aboutme.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="certificates.html">Certificates</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="projects.html">Projects</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact Info</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact Info</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({offset:0});
+        </script>
+        <script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
+
+        <section id="about" class="certificates-section" style="margin-bottom: 20px;">
+          <h1><i class="fas fa-user-certificate"></i> My Certificates</h1>
+
+            <div class="horizontal-card-container1">
+              <div class="card-1">
+                <div class="card-content-1">
+                  <h2><i class="fas fa-certificate"></i> AZ-900</h2>
+                  <p><strong>Issued by Microsoft</strong></p>
+                  <a href="AZ900.jpeg" target="_blank" class="button">
+                    <button> View Certificate</button>
+                  </a>
+                </div>  
+                <div class="card-image">
+                  <img src="microsoft.webp" alt="">
+                </div> 
+              </div>
+
+              <div class="card-1">
+                <div class="card-content-1">
+                  <h2><i class="fas fa-certificate"></i> Certified MuleSoft Developer</h2>
+                  <p><strong>Issued by Salesforce</strong></p>
+                  <a href="Mule1.jpeg" target="_blank" class="button">
+                     <button>View Certificate</button>
+                  </a>
+                </div>  
+                <div class="card-image">
+                  <img src="salesforce.jpg" alt="">
+                </div> 
+              </div>
+
+              <div class="card-1">
+                <div class="card-content-1">
+                  <h2><i class="fas fa-certificate"></i>  Certified MuleSoft Integration Associate</h2>
+                  <p><strong>Issued by Salesforce</strong></p>
+                  <a href="Mule.jpeg" target="_blank" class="button">
+                    <button> View Certificate</button>
+                  </a>
+                </div>  
+                <div class="card-image">
+                  <img src="salesforce.jpg" alt="">
+                </div> 
+              </div>
+
+
+             <div class="card-1">
+               <div class="card-content-1">
+                 <h2><i class="fas fa-certificate"></i>Solace Certified Solutions Consultant</h2>
+                 <p><strong>Issued by Solace</strong></p>
+                 <a href="solace.jpeg" target="_blank" class="button">
+                    <button> View Certificate</button>
+                  </a>
+                </div>  
+                <div class="card-image">
+                  <img src="solace logo.png" alt="">
+                </div>
+              </div>  
+          </div>
+        </section>
+        <footer class="footer" id="footer">
+          <p>© 2025 Srinidhi Burugulapally</p>
+        </footer>
+        <script>
+        let lastScrollY = window.scrollY;
+        const footer = document.getElementById("footer");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY < lastScrollY) {
+            // scrolling down
+            footer.classList.add("hide");
+          } else {
+            // scrolling up
+            footer.classList.remove("hide");
+          }
+          lastScrollY = window.scrollY;
+        });
+        </script>
+</body>
+</html>

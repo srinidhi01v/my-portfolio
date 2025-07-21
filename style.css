@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    height: 230vh;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(255,255,255), rgb(243, 233, 161));
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span{
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(109,67, 0);
+}
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transform: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .contact-btn{
+    background-color: transparent;
+    color:black;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .contact-btn a{
+    color: black;
+    transition: 0.3s linear;
+}
+
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
+    background-color: rgb(109,67, 0);
+    color: white;
+}
+
+.nav-container .links a:hover{
+    color: rgb(109,67, 0);
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: rgb(109,67, 0);
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .image{
+    z-index: -1;
+    width: 20%;
+    border-radius: 1px;
+}
+
+.main-container .image img{
+    width: 100%;
+}
+
+.main-container .content{
+    color: black;
+    width: 40%;
+    min-height: 100px;
+}
+
+.content h1{
+    font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+
+.content h1 span{
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(109,67, 0);
+}
+
+.content .typewriter{
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+
+.content .typewriter span{
+    color: rgb(109,67, 0);
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px rgb(109,67, 0);
+    position: relative;
+    transition: 0.3s linear;
+}
+
+.typewriter span::before{
+    content: "Developer";
+    animation: words 15s infinite;
+}
+
+.typewriter span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    animation:  cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+@keyframes words {
+    0%, 33%{
+        content: "Developer";
+    }
+    34%, 66%{
+        content: "Data Analyst";
+    }
+    67%, 100%{
+        content: "Associate Professional Software Engineer";
+    }
+}
+
+.content p{
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+
+@media (max-width:884px) {
+    body{
+        overflow-y: visible;
+    }
+
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+
+    .hamburg,.cancel{
+        display: block;
+    }
+
+    .main-container .content{
+        width: 80%;
+    }
+    .cancel{
+        color: white;
+    }
+
+    .main-container .image{
+        width: 80%;
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .content .typewriter {
+        font-size: 1.2rem;
+    }
+    
+    .typewriter span::before {
+        font-size: 1.25rem;
+    }
+
+    .typewriter span::after {
+       width: calc(10% + 2px);
+    }
+
+    .main-container .image{
+        width: 50%;
+        margin-bottom: 0px;
+    }
+    
+    .content p {
+        font-size: 1rem;
+    }
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(209, 149, 71);
+}
+
+::-webkit-scrollbar-track{
+    background-color: #000000;
+    width: 50px;
+}
+
+.about{
+    display: flex;
+    width: 100%;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+    padding: 12% 8%;
+    gap: 10em;
+    background: #fff;
+}
+
+.about .about-content p{
+  font-family: 'Poppins', sans-serif;
+  align-items: center;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.about-img img{
+    position: relative;
+    width: 200px;
+    box-shadow: 0 0 25px rgb(192, 138, 31);
+    border-radius: 50%;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: linear-gradient(to right, rgb(255,255,255), rgb(254, 246, 173));
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.footer.hide {
+  transform: translateY(100%);
+}
+
+@media (max-width: 884px) {
+  .about {
+    flex-direction: column;
+    gap: 3em;
+    padding: 15% 5%;
+  }
+
+  .about .about-content p {
+    font-size: 16px;
+    align-items: center;
+  }
+
+  .about-img img {
+    width: 165px;
+    margin-top: 5%;
+  }
+}
+
+
+@media (max-width: 480px) {
+    .about {
+      padding: 25% 5%;
+      gap: 2em;
+    }
+    
+    .about-img img {
+      width: 180px;
+    }
+    
+    .about .about-content p {
+      font-size: 15px;
+      margin-top: 20px;
+    }
+}
+
+
+
+
+/* For 1024px devices */
+@media (min-width: 885px) and (max-width: 1024px) {
+  /* Navigation adjustments */
+  nav {
+    height: 8vh;
+  }
+    
+  .nav-container {
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+    
+  .logo {
+    font-size: 1.8rem;
+  }
+    
+  .nav-container .links {
+    gap: 2rem;
+  }
+    
+  .nav-container .links a {
+    font-size: 1.1rem;
+  }
+    
+  .nav-container .contact-btn {
+    padding: 4px 15px;
+    font-size: 0.9rem;
+  }
+    
+  /* Hero section adjustments */
+  section {
+    height: 85vh;
+  }
+    
+  .main-container {
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+    
+  .main-container .image {
+    width: 40%;
+  }
+    
+  .main-container .image img {
+    width: 110%;
+  }
+    
+  .main-container .content {
+    width: 50%;
+  }
+    
+  .content h1 {
+    font-size: 2.5rem;
+  }
+    
+  .content .typewriter {
+    font-size: 2rem;
+  }
+    
+  .typewriter span {
+    font-size: 2.5rem;
+  }
+    
+  .content p {
+    font-size: 1.5rem;
+  }
+    
+  /* Typewriter cursor adjustment */
+  .typewriter span::after {
+    width: calc(100% + 6px);
+  }
+    
+  /* Dropdown menu (in case it appears) */
+  .dropdown .links a {
+    padding: 12px 0;
+    font-size: 1.1rem;
+  }
+
+  .about {
+    height: 70vh; /* More flexible height */
+    padding: 20% 15%; /* Reduced padding */
+    gap: 5em; /* Smaller gap between elements */
+    flex-direction: row; /* Maintain side-by-side layout */
+  }
+
+  .about-img img {
+    width: 250px; /* Slightly smaller image */
+    box-shadow: 0 0 20px rgb(192, 138, 31); /* Adjusted shadow */
+  }
+
+  .about .about-content {
+    width: 100%; /* Give more space to content */
+  }
+
+  .about .about-content p {
+    font-size: 22px; /* Slightly smaller text */
+    margin-top: 20px; /* Reduced top margin */
+    line-height: 2; /* Better readability */
+  }
+
+  /* Footer adjustments */
+  .footer {
+    padding: 8px 0;
+    font-size: 0.9rem;
+  }
+}

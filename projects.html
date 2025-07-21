@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Srinidhi Burugulapally Portfolio</title>
+    <link rel="stylesheet" href="myprojects.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Srinidhi Burugulapally</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="aboutme.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="certificates.html">Certificates</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="projects.html">Projects</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact Info</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact Info</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({offset:0});
+        </script>
+        <script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
+
+        <!--<<section class="projects">
+
+          <h1>Projects</h1>
+            <div class="project-card">
+              <img src="images/sales-dashboard.png" alt="Sales Dashboard" />
+              <div class="project-info">
+                <h2>Sales Dashboard</h2>
+                  <p>Interactive Tableau dashboard visualizing monthly sales trends by region.</p>
+                  <a href="https://public.tableau.com/app/profile/priyanka.bandaru/viz/SalesDashboard_17513091922410/Dashboard2?publish=yes" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img src="images/data-cleaning.png" alt="Data Cleaning Script" />
+              <div class="project-info">
+                <h3>Data Cleaning Automation</h3>
+                  <p>Python script that cleans messy datasets, removing nulls and duplicates efficiently.</p>
+                  <a href="https://github.com/yourgithub" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+               </div>
+            </div>
+
+               
+          </section>-->
+        <!--<section class="intro-section">
+          <h2><i class="fas fa-briefcase"></i> Professional Expierence</h2>
+
+        </section>-->
+
+        <section class="experience-section" id="experience">
+          <h2 class="heading">Professional <span>Experience</span></h2>
+
+          <div class="experience-cards">
+
+            <div class="experience-card">
+                <div class="company-logo">
+                  <img src="DXC.png" alt="">
+                </div>
+                <div class="card-content">
+                  <h3>Associate Professional Software Engineer</h3>
+                  <p>MuleSoft Developer</p>
+                  <p class="company">DXC technology | Nov 2021 – July 2023</p>
+                  <ul>
+                    <li><i class="fas fa-chart-line"></i> Designed and implemented Power BI dashboards and Tableau reports for real-time monitoring of integration metrics and business KPIs.  </li>
+                    <li><i class="fa-brands fa-wpforms"></i> Utilized SQL and Python for data extraction, transformation, and analysis to support ETL processes and business reporting.  </li>
+                    <li><i class="fa-solid fa-bars-staggered"></i> Leveraged DevOps tools including JIRA, Azure DevOps, Bitbucket, and Jenkins for continuous integration, deployment, and sprint tracking.  </li>
+                    <li><i class="fas fa-database"></i> Developed reports and presentations using Excel and PowerPoint to convey technical insights to business teams and leadership.  </li>
+                    <li><i class="fas fa-users"></i> Designed, implemented, and optimized MUnit test cases, improving test coverage from 92% to 100%, enhancing software reliability.  </li>
+                  </ul>
+                </div>
+            </div>
+
+            <!--<div class="experience-card">
+              <div class="company-logo">
+                <img src="abc-logo.png" alt="ABC Corp Logo">
+              </div>
+              <div class="card-content">
+                <h3>Data Analyst Intern</h3>
+                <p class="company">ABC Corp | Jun 2022 – Dec 2022</p>
+                <ul>
+                  <li><i class="fas fa-flask"></i> Supported A/B test analysis with Python</li>
+                  <li><i class="fas fa-filter"></i> Cleaned and transformed large datasets</li>
+                  <li><i class="fas fa-lightbulb"></i> Contributed to insights that boosted CTR by 25%</li>
+                </ul>
+              </div>
+            </div>-->
+
+          </div>
+        </section>
+
+        <section id="projects" class="project-section">
+          <h2>Personal Projects</h2>
+
+            <div class="card-container">
+            <div class="card">
+              <img src="blinkit.webp" alt="Blinkit Sales">
+              <div class="card-content">
+              <h3><i class="fas fa-chart-line"></i> Sales Dashboard</h3>
+                <p>Interactive Tableau dashboard for tracking sales and profit by region and category.</p>
+                <p><strong>Tools:</strong> Tableau, Excel</p>
+                <a href="https://public.tableau.com/app/profile/srinidhi.burugulapally/viz/Dashboard_17513157670100/Dashboard1?publish=yes" target="_blank">View Project</a>
+            </div>
+            </div>
+
+            <div class="card">
+              <img src="mrp.jpg" alt="Masters Research Project">
+              <div class="card-content">
+                <h3><i class="fas fa-chart-bar"></i> Masters Research Project</h3>
+                  <p>Interactive Tableau dashboard for tracking the current job market for Business Analyst job roles</p>
+                  <p><strong>Tools:</strong> Tableau, Excel</p>
+                  <a href="https://public.tableau.com/app/profile/srinidhi.burugulapally4874/viz/projectdashboard_v2024_4_17472372603950/VACANCIES?publish=yes" target="_blank">View Project</a>
+             </div>
+            </div>
+        </section>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+        <footer class="footer" id="footer">
+          <p>© 2025 Srinidhi Burugulapally</p>
+        </footer>
+        <script>
+        let lastScrollY = window.scrollY;
+        const footer = document.getElementById("footer");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY < lastScrollY) {
+            // scrolling down
+            footer.classList.add("hide");
+          } else {
+            // scrolling up
+            footer.classList.remove("hide");
+          }
+          lastScrollY = window.scrollY;
+        });
+        </script>
+
+</body>
+</html>

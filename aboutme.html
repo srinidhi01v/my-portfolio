@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Srinidhi Burugulapally Portfolio</title>
+    <link rel="stylesheet" href="aboutme.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Srinidhi Burugulapally</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="aboutme.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="certificates.html">Certificates</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="projects.html">Projects</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact Info</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact Info</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({offset:0});
+        </script>
+        <script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
+
+        <section id="about" class="about-section" style="margin-bottom: 20px;">
+          <h1><i class="fas fa-school"></i> My Education History</h1>
+
+            <div class="horizontal-card-container">
+              <div class="card1">
+                <div class="card-content1">
+                  <h2><i class="fas fa-user-graduate"></i> Masters Degree</h2>
+                  <p><strong>Saint Louis University</strong></p>
+                  <p>Saint Louis, MO, USA</p>
+                  <p>From: Aug 2023 To: May 2025</p>
+                  <p>Masters in Information Systems</p>
+                  <p>GPA: 3.74/4.0</p>
+                  <a href="Masters.pdf" target="_blank" class="button">
+                      <button>View Degree</button>
+                  </a>
+                </div>  
+                <div class="card-image">
+                  <img src="slu.jpg" alt="">
+                </div> 
+              </div>
+
+
+             <div class="card1">
+               <div class="card-content1">
+                 <h2><i class="fas fa-graduation-cap"></i> Bachelors Degree</h2>
+                 <p><strong>Cmr Engineering college</strong></p>
+                 <p>Kandlakoya, Telangana, India</p>
+                 <p>From: July 2017 To: June 2021</p>
+                 <p>Bachelors in Mechanical Engineering</p>
+                 <p>GPA: 7.2/10.0</p>
+                 <a href="od.jpeg" target="_blank" class="button">
+                    <button>View Degree</button>
+                </a>
+                </div>  
+                <div class="card-image">
+                  <img src="cmr.webp" alt="">
+                </div>
+              </div>  
+          </div>
+        </section>
+        <section class="hobbies-section" style="margin-top: 0px;">
+          <h2><i class="fas fa-paintbrush"></i> My Hobbies and Interests:</h2>
+          <div class="img">
+            <img src="hobbies.jpg" alt="" style="width: 300px; float: right;">
+          </div>
+          <div class="content">
+            <p><i class="fas fa-headphones"></i> Listening to podcasts about tech, data, and innovation</p>
+            <p><i class="fas fa-pencil"></i> Sketching or doodling to relax and boost creativity</p>
+            <p><i class="fas fa-camera"></i> Photography (capturing moments and patterns beyond the screen)</p>
+            <p><i class="fas fa-chart-simple"></i> Creating dashboards and visualizations that make complex data easy to understand.</p>
+          </div>  
+        </section>
+        <footer class="footer" id="footer">
+          <p>© 2025 Srinidhi Burugulapally</p>
+        </footer>
+        <script>
+        let lastScrollY = window.scrollY;
+        const footer = document.getElementById("footer");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY < lastScrollY) {
+            // scrolling down
+            footer.classList.add("hide");
+          } else {
+            // scrolling up
+            footer.classList.remove("hide");
+          }
+          lastScrollY = window.scrollY;
+        });
+        </script>
+
+</body>
+</html>

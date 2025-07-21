@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(255,255,255), rgb(254, 246, 173));
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span{
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(109,67, 0);
+}
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transform: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .contact-btn{
+    background-color: transparent;
+    color:black;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .contact-btn a{
+    color: black;
+    transition: 0.3s linear;
+}
+
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
+    background-color: rgb(109,67, 0);
+    color: white;
+}
+
+.nav-container .links a:hover{
+    color: rgb(109,67, 0);
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: rgb(109,67, 0);
+}
+
+section{
+    width: 100%;
+    height: fit-content;
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(209, 149, 71);
+}
+
+::-webkit-scrollbar-track{
+    background-color: #000000;
+    width: 50px;
+}
+
+.skills-section {
+  padding: 50px 20px;
+  background: linear-gradient(to right, rgb(255,255,255), rgb(254, 246, 173));
+  text-align: center;
+  flex: 1;
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  color: #b92b2b;
+  margin-bottom: 40px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.skill-card {
+  background: #fff9e7;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 25px;
+  width: 300px;
+  text-align: left;
+  
+}
+
+.skill-card h3 {
+  color: #4d1961;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.skill-card ul {
+  list-style: inside;
+  padding-left: 0;
+}
+
+.skill-card li {
+  padding: 5px 0;
+  font-size: 1rem;
+  color: #4f4e4e;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: linear-gradient(to right, rgb(255,255,255), rgb(254, 246, 173));
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.footer.hide {
+  transform: translateY(100%);
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+@media (max-width: 884px) {
+    body{
+        overflow-y: visible;
+    }
+
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+
+    .hamburg,.cancel{
+        display: block;
+    }
+ 
+    .cancel{
+        color: white;
+    }
+
+    .skills-section {
+      padding: 30px 10px;
+    }
+
+    .skills-section h2 {
+      font-size: 2rem;
+    }
+
+    .skill-card {
+      width: 90%; /* Make card take most of screen */
+      padding: 20px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .skill-card li {
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      position: static;
+      transform: none !important;
+    }
+
+}    
+
+@media (max-width: 480px) {
+    body{
+        overflow-y: visible;
+    }
+
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+
+    .hamburg,.cancel{
+        display: block;
+    }
+ 
+    .cancel{
+        color: white;
+    }
+
+    .skills-section {
+      padding: 25px 5px;
+    }
+
+    .skills-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .skill-card {
+      width: 95%;
+      padding: 15px;
+    }
+
+   .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .skill-card ul {
+      padding-left: 15px;
+    }
+
+    .skill-card li {
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 885px) and (max-width: 1024px) {
+  /* Navigation adjustments */
+  nav {
+    height: 8vh;
+  }
+    
+  .nav-container {
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+    
+  .logo {
+    font-size: 1.8rem;
+  }
+    
+  .nav-container .links {
+    gap: 2rem;
+  }
+    
+  .nav-container .links a {
+    font-size: 1.1rem;
+  }
+    
+  .nav-container .contact-btn {
+    padding: 4px 15px;
+    font-size: 0.9rem;
+  }
+
+  .skills-section {
+    padding: 40px 15px;
+  }
+
+  .skills-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .skills-container {
+    gap: 25px;
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .skill-card {
+    width: 280px;
+    padding: 20px;
+  }
+
+  .skill-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .skill-card li {
+    font-size: 0.95rem;
+    padding: 4px 0;
+  }
+
+  /* Footer adjustments */
+  .footer {
+    padding: 8px 0;
+    font-size: 0.9rem;
+  }
+}  
+
+@media (orientation: landscape) {
+  .skills-container {
+    gap: 20px;
+  }
+    
+  .skill-card {
+    width: 260px;
+    padding: 18px;
+  }
+}
